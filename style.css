@@ -1,0 +1,660 @@
+@charset "UTF-8";
+
+/* リセットcss */
+
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+canvas,
+caption,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+body {
+  line-height: 1;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: 0 0;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: 700;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+/* ここまで リセットcss */
+/*ここから独自のcss*/
+* {
+  font-family: "Zen Maru Gothic", serif;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 32px;
+}
+h3 {
+  font-size: 24px;
+}
+@media screen and (max-width: 499px) {
+  /*and の前後に半角空白がないと機能しない*/
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  * {
+    font-size: 10px;
+  }
+}
+.keyvisual {
+  position: relative;
+  width: 100%;
+}
+.keyvisual img {
+  width: 100%;
+  max-width: 1000px;
+}
+.keyvisual div {
+  position: absolute;
+  bottom: 0%;
+  z-index: 1;
+  margin-left: 5%;
+  display: block;
+  font-size: 24px;
+  transform: translate(0, -10px);
+}
+.navi {
+  position: relative;
+  right: 0;
+  height: 40px;
+  display: flex;
+  margin-right: 5%;
+  gap: 10px;
+  justify-content: flex-end;
+  transform: translate(0, -40px);
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 499px) {
+  /*and の前後に半角空白がないと機能しない*/
+  .navi {
+    transform: translate(0, 0);
+    height: 30px;
+  }
+}
+.icon-ig::before {
+  content: ""; /*テクニカルな方法　本当はしたくない*/
+  background-image: url(./img/icon_ig.svg);
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.icon-cart::before {
+  content: "";
+  background-image: url(./img/icon_cart.svg);
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+}
+.icon-menu::before {
+  content: "";
+  background-image: url(./img/icon_menu.svg);
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+@media screen and (max-width: 499px) {
+  /*and の前後に半角空白がないと機能しない*/
+  .icon-cart::before,
+  .icon-ig::before,
+  .icon-menu::before {
+    width: 25px;
+    height: 25px;
+  }
+}
+.news-wrap,
+.about-wrap,
+.feature-wrap {
+  margin: 0 10%;
+  position: relative;
+}
+.news-wrap h2 {
+  transform: translate(0, -50%);
+}
+.news-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.news-box article {
+  width: 50%;
+  padding-right: 5%;
+  height: 600px;
+  position: relative;
+}
+
+.news-box .article-keyvisual {
+  position: relative;
+  width: 100%;
+  height: 75%;
+  background-image: url(./img/news/tea_day.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.news-box article + article .article-keyvisual {
+  background-image: url(./img/news/notion.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 499px) {
+  .news-box article {
+    height: 300px;
+  }
+  .news-box .article-keyvisual {
+    height: 50%;
+  }
+}
+.news-box > article > h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.news-box article .article-details {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 90%;
+  padding-bottom: 5px;
+  border-top: 1px solid #000;
+}
+.article-details a,
+.article-details time {
+  color: #000000;
+  font-weight: bold;
+}
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+.icon-ig,
+.icon-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.news-wrap .icon-ig {
+  position: absolute;
+  top: -5%;
+  right: 0;
+}
+
+@media screen and (max-width: 499px) {
+  .news-wrap {
+    margin-bottom: 10px;
+  }
+  .news-wrap .link-button {
+    position: absolute;
+    top: 100%;
+  }
+
+  .link-button {
+    width: 50vw;
+    text-align: center;
+    border: 1px solid #000000;
+    margin: 10px 25%;
+  }
+  .link-button:hover {
+    background-color: #808080 !important;
+  }
+}
+
+.about-wrap div {
+  display: block;
+  padding: 10%;
+  font-weight: bold;
+  line-height: 2;
+  font-size: 20px;
+}
+@media screen and (max-width: 499px) {
+  .about-wrap div {
+    font-size: 12px;
+  }
+}
+.about-wrap dl {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+@media screen and (max-width: 499px) {
+  .about-wrap dl {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr 1fr;
+  }
+}
+.about-wrap dt {
+  font-weight: bold;
+}
+.about-wrap dd {
+  padding: 10px;
+}
+.about-wrap dd p {
+  margin-bottom: 10px;
+}
+.ceylon-tea-wrap,
+.scone-wrap {
+  position: relative;
+  margin: 0 10%;
+  height: 400px;
+}
+
+.ceylon-tea-wrap img,
+.scone-wrap img {
+  width: 50%;
+  height: auto;
+}
+@media screen and (max-width: 499px) {
+  .ceylon-tea-wrap img,
+  .scone-wrap img {
+    width: 100%;
+    height: auto;
+  }
+}
+.ceylon-tea-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.scone-wrap img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.products-keyword {
+  position: absolute;
+  top: 10%;
+  z-index: 1;
+  font-weight: bold;
+  font-size: 24px;
+}
+.ceylon-tea-wrap .products-keyword {
+  left: 0;
+}
+.scone-wrap .products-keyword {
+  right: 0;
+}
+.products-description p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.products-description {
+  display: block;
+  position: absolute;
+  top: 25%;
+  background-color: #ffffff;
+  width: 60%;
+}
+
+.ceylon-tea-wrap .products-description {
+  left: 40%;
+}
+.scone-wrap .products-description {
+  right: 40%;
+}
+@media screen and (max-width: 499px) {
+  .products-description {
+    position: absolute;
+    top: 75%;
+    left: 0% !important;
+  }
+}
+
+.feature-wrap h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 5% 0;
+}
+.feature-tea-wrap,
+.feature-snack-wrap {
+  position: relative;
+  padding-bottom: 200px;
+  margin-bottom: 30px;
+}
+.feature-keyvisual {
+  width: 50%;
+  height: 250px;
+  display: block;
+}
+
+.feature-tea-wrap .feature-keyvisual {
+  position: absolute;
+  left: 0;
+  background-image: url(./img/feature/feature_img01.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.feature-description {
+  display: block;
+  width: 50%;
+  background-color: #ffffff;
+}
+/*h3タグはすべてにfont-weight: bold;してもいいかも*/
+.feature-description h3 {
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+@media screen and (max-width: 499px) {
+  .feature-keyvisual {
+    width: 100%;
+  }
+  .feature-description {
+    width: 100% !important;
+    position: absolute;
+    left: 0 !important;
+    bottom: 0;
+  }
+}
+
+.feature-tea-wrap .feature-description {
+  position: absolute;
+  right: 0;
+  padding-bottom: 10px;
+}
+.feature-snack-wrap .feature-keyvisual {
+  position: absolute;
+  right: 0;
+  background-image: url(./img/feature/feature_img02.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.recipe-wrap {
+  position: relative;
+}
+.recipe-wrap h2,
+.shop-information-wrap h2,
+.contact-wrap h2 {
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.recipe-box {
+  display: flex;
+  width: 100%;
+  overflow: scroll;
+}
+.recipe-box > div,
+.recipe-box > div > h3 {
+  writing-mode: vertical-lr;
+  font-weight: bold;
+}
+.recipe-box > div {
+  border-top: 10px solid #000;
+  margin-right: 5px;
+}
+.recipe-box article h3 {
+  font-weight: bold;
+  padding: 10px 0;
+}
+.recipe-box img {
+  width: 300px;
+
+  height: auto;
+}
+.recipe-box img,
+.recipe-box article p {
+  padding-right: 30px;
+}
+.shop-information-wrap .link-button {
+  width: 40vw;
+  text-align: center;
+  border: 1px solid #000;
+  margin: 10px;
+}
+.shop-information-wrap .link-button:hover {
+  background-color: #808080;
+}
+.real-shop-information-wrap {
+  display: flex;
+}
+.real-shop-information-wrap img {
+  width: 100%;
+  height: auto;
+}
+.real-shop-information-description table tr > * {
+  padding: 6px;
+}
+.real-shop-information-description,
+.online-shop-information-description {
+  display: block;
+  width: 50%;
+  margin: 0 5%;
+}
+.online-shop-information-wrap {
+  display: flex;
+}
+@media screen and (max-width: 499px) {
+  .real-shop-information-wrap img {
+    width: 100vw;
+  }
+  .real-shop-information-wrap {
+    flex-direction: column;
+  }
+  .real-shop-information-description {
+    width: 90%;
+  }
+  .shop-information-wrap .link-button {
+    margin: 10px 15%;
+  }
+  .online-shop-information-wrap {
+    display: block;
+  }
+}
+.form-wrap > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-wrap > form > * {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px 10px;
+}
+
+.form-wrap input,
+.form-wrap select,
+.form-wrap textarea {
+  width: 60%;
+  padding: 15px;
+}
+.privacy-box > div {
+  margin: 0 10%;
+  text-align: center;
+}
+.privacy-box > div > input {
+  width: 5%;
+}
+.form-wrap .label-title {
+  width: 30%;
+  font-weight: bold;
+}
+@media screen and (max-width: 499px) {
+  .form-wrap > form > * {
+    flex-direction: column;
+  }
+  .form-wrap input,
+  .form-wrap select,
+  .form-wrap textarea {
+    width: 100%;
+  }
+}
+.send-button {
+  width: 50vw !important;
+  background-color: #808080;
+  color: #ffffff;
+  height: 50px;
+  border: none;
+  align-items: center;
+}
+.send-button:hover {
+  background-color: #000000;
+}
+footer {
+  text-align: center;
+}
